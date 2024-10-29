@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/log-in-and-sign-in.css" />
+    <script src="../../js/script.js"></script>
+    <script src="../../js/templates.js"></script>
+    <script src="../../js/register.js"></script>
+    <script src="../../js/storage.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../img/logo.svg">
+    <title>Sign Up</title>
+</head>
+
+<body onload="initRegister()">
+    <img class="logo" src="../../img/logo.svg" />
+    <div id="popup-container"></div>
+    <div class="aot">
+        <form class="container container-sign-in" id="container" onsubmit="register(); return false;">
+            <img class="arrow" onclick="backToLogIn()" src="../../img/arrow.svg">
+            <div class="head">
+                <h1>Sign up</h1>
+                <div class="underline"></div>
+            </div>
+            <div class="gap16">
+                <div class="input-container">
+                    <div class="input">
+                        <input id="inputName" placeholder="Name" type="text" required>
+                        <img src="../../img/person.svg">
+                    </div>
+
+                    <div class="input">
+                        <input id="inputEmail" placeholder="E-Mail" type="email" required>
+                        <img src="../../img/mail.svg">
+                    </div>
+
+                    <div class="input">
+                        <input id="inputPassword" placeholder="Password" type="password" required>
+                        <img src="../../img/lock.svg" class="togglePasswordVisibility">
+                    </div>
+                    
+                    <div id="confirm-password-container" class="input">
+                        <input id="inputConfirmPassword" placeholder="Confirm password" type="password" required>
+                        <img src="../../img/lock.svg" class="togglePasswordVisibility">
+                    </div>
+                                      
+                </div>
+                <div id="failureText" class="passwordDontMatchText"></div>
+                <div class="checkbox">
+                    <div>
+                        <input class="checkbox-input" type="checkbox" required>
+                    </div>
+                    <span>I accept the<span class="blue"> privacy Policy</span></span>
+                </div>
+            </div>
+            <div class="style-btns">
+                <button id="registerBtn" class="dark-btn">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <a href="../html/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="../html/legal.html" target="_blank">Legal notice</a>
+    </footer>
+</body>
+
+</html>

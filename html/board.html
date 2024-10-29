@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/template.css" />
+        <link rel="stylesheet" href="../css/board.css" />
+        <link rel="stylesheet" href="../css/modal-add-task.css" />
+        <link rel="stylesheet" href="../css/task-open.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <script src="../js/script.js"></script>
+        <script src="../js/addTask.js"></script>
+        <script src="../js/board.js"></script>
+        <script src="../js/board2.js"></script>
+        <script src="../js/storage.js"></script>
+        <script src="../js/templates.js"></script>
+        <link rel="icon" type="image/x-icon" href="../img/logo.svg" />
+        <title>Board</title>
+    </head>
+    <body onload="init('Board'); initBoard()">
+        <div class="grid">
+            <div w3-include-html="../template/sidebar.html"></div>
+            <div id="hidden-overflow" class="rightContainer">
+                <div w3-include-html="../template/navbar.html"></div>
+                <div class="contentBoard">
+                    <div class="contentRightWrapper">
+                        <div class="contanctsHeader">
+                            <h1 class="contactsHeadline">Board</h1>
+                            <div class="searchbarButtonWrapper">
+                                <input class="searchbarBoard" type="search" placeholder="Find Task" oninput="handleSearchChange(this.value)" />
+                                <button class="add-task-button" onclick="loadAddTaskTemplate('toDo')">
+                                    Add Task
+                                    <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_5_1027" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
+                                            <rect y="0.5" width="32" height="32" fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_5_1027)">
+                                            <path d="M14.6661 17.8327H6.66608V15.1661H14.6661V7.16608H17.3327V15.1661H25.3327V17.8327H17.3327V25.8327H14.6661V17.8327Z" fill="white" />
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dragDropGlobalWrapper">
+                            <div id="collumnStyling">
+                                <div class="collumnHeaderWrapper">
+                                    <h2 class="collumnHeadline">To Do</h2>
+                                    <svg onclick="loadAddTaskTemplate('toDo')" class="addIcon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M16 12.5755L8 12.5755" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="contentContainer drag-area" id="toDo" ondrop="moveTo('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')"></div>
+                            </div>
+                            <div id="collumnStyling">
+                                <div class="collumnHeaderWrapper">
+                                    <h2 class="collumnHeadline">In progress</h2>
+                                    <svg onclick="loadAddTaskTemplate('inProgress')" class="addIcon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M16 12.5755L8 12.5755" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="contentContainer drag-area"
+                                    id="inProgress"
+                                    ondrop="moveTo('inProgress'); removeHighlight('inProgress')"
+                                    ondragend="removeHighlight('inProgress')"
+                                    ondragleave="removeHighlight('inProgress')"
+                                    ondragover="allowDrop(event); highlight('inProgress')"
+                                ></div>
+                            </div>
+                            <div id="collumnStyling">
+                                <div class="collumnHeaderWrapper">
+                                    <h2 class="collumnHeadline">Await feedback</h2>
+                                    <svg onclick="loadAddTaskTemplate('feedback')" class="addIcon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M16 12.5755L8 12.5755" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="contentContainer drag-area" id="feedback" ondrop="moveTo('feedback'); removeHighlight('feedback')" ondragleave="removeHighlight('feedback')" ondragover="allowDrop(event); highlight('feedback')">
+                                    No Feedback
+                                </div>
+                            </div>
+                            <div id="collumnStyling">
+                                <div class="collumnHeaderWrapper">
+                                    <h2 class="collumnHeadline">Done</h2>
+                                    <svg onclick="loadAddTaskTemplate('done')" class="addIcon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M16 12.5755L8 12.5755" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="contentContainer drag-area" id="done" ondrop="moveTo('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cardModalID"></div>
+            <div id="addTaskModalID"></div>
+        </div>
+    </body>
+</html>

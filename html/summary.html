@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/template.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <script src="../js/script.js"></script>
+        <script src="../js/summary.js"></script>
+        <script src="../js/storage.js"></script>
+        <link rel="stylesheet" href="../css/summary.css" />
+        <link rel="icon" type="image/x-icon" href="../img/logo.svg" />
+        <title>Summary</title>
+    </head>
+
+    <body onload="init('summary'); initSummary();">
+        <div class="grid">
+            <div w3-include-html="../template/sidebar.html"></div>
+            <div class="rightContainer">
+                <div w3-include-html="../template/navbar.html"></div>
+                <div id="renderContent">
+                    <div class="bg-animate"></div>
+                    <div class="mainwrapper">
+                        <div class="headline">
+                            <h2>Join 360</h2>
+                            <div class="breakline"></div>
+                            <span class="keymetrics">Key Metrics at a Glance</span>
+                            <div class="bottom-breakline d-none"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="main-container">
+                            <div class="section1">
+                                <a href="../html/board.html" class="box-of-section1">
+                                    <div class="cycle pencil"></div>
+                                    <div class="flex-column">
+                                        <h3 id="to-do-amount"></h3>
+                                        <span>To-do</span>
+                                    </div>
+                                </a>
+
+                                <a href="../html/board.html" class="box-of-section1">
+                                    <div class="cycle check"></div>
+                                    <div class="flex-column">
+                                        <h3 id="done-amount"></h3>
+                                        <span>Done</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <a href="../html/board.html" class="section2">
+                                <div class="urgent">
+                                    <div class="small-cycle">
+                                        <img class="d-block" src="../img/arrowup.svg" />
+                                    </div>
+                                    <div class="flex-column">
+                                        <h3 id="font-urgent-number" class="font-urgent-number">1</h3>
+                                        <span class="font-urgent">Urgent</span>
+                                    </div>
+                                </div>
+
+                                <div class="breakline-grey"></div>
+
+                                <div class="date-section blue">
+                                    <h6 id="earliest-due-date">February 8, 2024</h6>
+                                    <p class="deadline">Upcoming Deadline</p>
+                                </div>
+                            </a>
+                            <div class="section3">
+                                <a href="../html/board.html" class="box-of-section3">
+                                    <h3 id="tasks-amount"></h3>
+                                    <span>Tasks in<br />Board</span>
+                                </a>
+
+                                <a href="../html/board.html" class="box-of-section3">
+                                    <h3 id="progress-amount"></h3>
+                                    <span>Tasks in<br />Progress</span>
+                                </a>
+
+                                <a href="../html/board.html" class="box-of-section3">
+                                    <h3 id="feedback-amount"></h3>
+                                    <span>Awaiting<br />Feedback</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="greeting greet-animate">
+                            <h5 id="greet-time" class="greeting"></h5>
+                            <h3 id="greet-user" class="light-blue greeting"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

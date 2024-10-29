@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/template.css" />
+    <link rel="stylesheet" href="../css/contacts.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <script src="../js/script.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/templates.js"></script>
+    <script src="../js/contact.js"></script>
+    <title>Contacts</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.svg" />
+</head>
+
+<body onload="init('Contacts'); initContacts()">
+    <div class="grid">
+        <div w3-include-html="../template/sidebar.html"></div>
+        <div class="rightContainer">
+            <div w3-include-html="../template/navbar.html"></div>
+            <div class="content">
+                <div class="contentGrid">
+                    <div class="contactsContainer">
+                        <div id="addContactButton" class="buttonWrapper">
+                            <button onclick="openPopUp()" class="addNewContact">
+                                <p class="buttonText">Add new contact</p>
+                                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_1_2021" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="33" height="33">
+                                        <rect x="0.5" y="0.5" width="32" height="32" fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask0_1_2021)">
+                                        <path
+                                            d="M25.8293 19.1667C25.5134 19.1667 25.2499 19.0602 25.0388 18.8472C24.8276 18.6343 24.7221 18.3704 24.7221 18.0556V14.9444H21.611C21.2962 14.9444 21.0323 14.8376 20.8193 14.6239C20.6063 14.4102 20.4999 14.1453 20.4999 13.8294C20.4999 13.5135 20.6063 13.25 20.8193 13.0389C21.0323 12.8278 21.2962 12.7222 21.611 12.7222H24.7221V9.6111C24.7221 9.2963 24.8289 9.03241 25.0427 8.81944C25.2564 8.60648 25.5212 8.5 25.8371 8.5C26.153 8.5 26.4165 8.60648 26.6276 8.81944C26.8387 9.03241 26.9443 9.2963 26.9443 9.6111V12.7222H30.0554C30.3702 12.7222 30.6341 12.8291 30.8471 13.0428C31.06 13.2565 31.1665 13.5213 31.1665 13.8372C31.1665 14.1531 31.06 14.4167 30.8471 14.6278C30.6341 14.8389 30.3702 14.9444 30.0554 14.9444H26.9443V18.0556C26.9443 18.3704 26.8374 18.6343 26.6237 18.8472C26.41 19.0602 26.1452 19.1667 25.8293 19.1667ZM12.4999 16.4778C11.0332 16.4778 9.81467 15.9926 8.84429 15.0222C7.87394 14.0519 7.38876 12.8333 7.38876 11.3667C7.38876 9.9 7.87394 8.68149 8.84429 7.71114C9.81467 6.74076 11.0332 6.25557 12.4999 6.25557C13.9665 6.25557 15.185 6.74076 16.1554 7.71114C17.1258 8.68149 17.611 9.9 17.611 11.3667C17.611 12.8333 17.1258 14.0519 16.1554 15.0222C15.185 15.9926 13.9665 16.4778 12.4999 16.4778ZM2.94429 27.1667C2.62949 27.1667 2.3656 27.0602 2.15262 26.8472C1.93967 26.6343 1.83319 26.3704 1.83319 26.0556V23.8333C1.83319 23.063 2.03134 22.3611 2.42762 21.7278C2.82394 21.0945 3.36654 20.6185 4.05542 20.3C5.6258 19.5815 7.08016 19.0648 8.41849 18.75C9.75685 18.4352 11.1161 18.2778 12.4963 18.2778C13.8764 18.2778 15.2369 18.4352 16.5776 18.75C17.9184 19.0648 19.3665 19.5815 20.9221 20.3C21.611 20.6333 22.1573 21.113 22.561 21.7389C22.9647 22.3648 23.1665 23.063 23.1665 23.8333V26.0556C23.1665 26.3704 23.06 26.6343 22.8471 26.8472C22.6341 27.0602 22.3702 27.1667 22.0554 27.1667H2.94429ZM4.05539 24.9445H20.9443V23.8333C20.9443 23.5148 20.8647 23.2148 20.7054 22.9333C20.5462 22.6518 20.3073 22.4407 19.9888 22.3C18.5517 21.5963 17.2628 21.1204 16.1221 20.8722C14.9813 20.6241 13.7739 20.5 12.4999 20.5C11.2258 20.5 10.0184 20.6278 8.87762 20.8833C7.73689 21.1389 6.4406 21.6111 4.98876 22.3C4.69985 22.4407 4.47206 22.6518 4.30539 22.9333C4.13872 23.2148 4.05539 23.5148 4.05539 23.8333V24.9445ZM12.4999 14.2556C13.3221 14.2556 14.0091 13.9796 14.561 13.4278C15.1128 12.8759 15.3888 12.1889 15.3888 11.3667C15.3888 10.5444 15.1128 9.85741 14.561 9.30557C14.0091 8.7537 13.3221 8.47777 12.4999 8.47777C11.6776 8.47777 10.9906 8.7537 10.4388 9.30557C9.88689 9.85741 9.61096 10.5444 9.61096 11.3667C9.61096 12.1889 9.88689 12.8759 10.4388 13.4278C10.9906 13.9796 11.6776 14.2556 12.4999 14.2556Z"
+                                            fill="white" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="contacts">
+                            <div id="contactName"></div>
+                        </div>
+                    </div>
+                    <!--Hier beginnt der Pop-Up-->
+                    <div id="pop-up" class="bg-pop-up d-none">
+                        <div class="wholePop">
+                            <div class="close">
+                                <img onclick="closePopUp()" src="../img/close.svg">
+                            </div>
+                            <div class="bluue">
+                                <img class="popUpJoinImg" src="../img/template-img/Capa 2.svg">
+                                <h2>Add contact</h2>
+                                <h3>Tasks are better with a team!</h3>
+                                <img class="blueUnderline" src="../img/blueUnderline.svg">
+                            </div>
+                            <div class="initialCircleXL light-grey"><img src="../img/personwhite.svg"></div>
+                            <div class="whitee">
+                                <form onsubmit="createContact(); return false;">
+                                    <div class="inputFields">
+                                        <div class="singleInput">
+                                            <input required id="contact-name" placeholder="Name" type="text">
+                                            <img src="../img/person.svg">
+                                        </div>
+                                        <div class="singleInput">
+                                            <input required id="contact-email" placeholder="Email" type="email">
+                                            <img src="../img/mail.svg">
+                                        </div>
+                                        <div class="singleInput">
+                                            <input required id="contact-tel" placeholder="Number" type="text">
+                                            <img src="../img/telephone.svg">
+                                        </div>
+                                    </div>
+                                    <div class="styleBtn">
+                                        <button type="button" onclick="closePopUp()" class="cancelBtn">Cancel <img
+                                                src="../img/close.svg"></button>
+                                        <button type="submit" class="createBtn">Create
+                                            contact <img src="../img/check.svg"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Hier endet der Pop-Up-->
+
+                    <!--Hier beginnt der Edit-PopUp-->
+                    <div id="edit-pop-up" class="bg-pop-up d-none">
+                    </div>
+                    <!--Hier endet der Edit-PopUp-->
+
+                    <div class="contentRight d-none-1300" id="resize-contact">
+                        
+                        <div class="contentRightWrapper">
+                            <div class="contanctsHeader">
+                                <h1 class="contactsHeadline">Contacts</h1>
+                                <svg class="devider" xmlns="http://www.w3.org/2000/svg" width="4" height="63" viewBox="0 0 4 63"
+                                    fill="none">
+                                    <path d="M2 2V61" stroke="#29ABE2" stroke-width="3" stroke-linecap="round" />
+                                </svg>
+                                <p class="betterTeam">Better with a Team</p>
+                                <img onclick="closeContact()" class="pointer resize-d-none" src="../img/arrow.svg">
+                            </div>
+                            <div class="contact " id="open-contact">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

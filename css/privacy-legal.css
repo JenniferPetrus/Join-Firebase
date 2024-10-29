@@ -1,0 +1,118 @@
+body {
+    line-height: 19.2px;
+}
+
+.rightContainer {
+    background-color: #F6F7F8;
+}
+
+h1 {
+    font-size: 61px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+p, ul, li {
+    font-weight: 400;
+}
+
+.open-font {
+    font-family: 'Open Sans';
+}
+
+.column10gap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.space-betw {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 72px;
+}
+
+.container-position {
+    gap: 30px;
+    margin: 120px 56px;
+    height: 100%;
+}
+
+.curs-pointer {
+    cursor: pointer;
+}
+
+.blue {
+    text-decoration: none;
+    color: #28abe2;
+}
+
+.blue:hover {
+    text-decoration: underline;
+}
+
+
+.imprint {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gap24 {
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gap35 {
+    display: flex;
+    gap: 35px;
+}
+
+.pb50 {
+    padding-bottom: 50px;
+}
+
+.subpoint-number {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32.4px;
+}
+
+.subpoint-headline {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.subpoint-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+}
+
+
+@media (max-width: 900px){
+/* denke das liegt an der Navbar */
+}
+
+@media (max-width: 530px){
+    h1{
+        font-size: 47px;
+    }
+}
+
+@media (max-width: 415px){
+    h1{
+        font-size: 35px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+}

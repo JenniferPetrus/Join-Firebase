@@ -1,0 +1,408 @@
+.openCardBackground {
+    background-color: rgba(0, 0, 0, 0.268);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #2A3647 !important;
+}
+
+.addTaskHeadline {
+    padding-bottom: 0;
+}
+
+.openTask {
+    display: flex;
+    padding: 48px 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    width: 500px;
+    max-width: 500px;
+    height: 95vh;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.cardType {
+    display: flex;
+    padding: 4px 24px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: #0038ff;
+}
+
+.closeIcon {
+    cursor: pointer;
+}
+
+.cardTypeDescription {
+    color: #fff;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.cardHeadlineOverlay {
+    color: black;
+    font-family: Inter;
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    padding-bottom: 0;
+    text-align: left;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.cardSubheadline {
+    align-self: stretch;
+    color: black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.dateWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+}
+
+.dateDescription {
+    color: #2a3647;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.date {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.priorityWrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    align-self: stretch;
+}
+
+.priorityDescription {
+    color: #2a3647;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.priority {
+    display: flex;
+    padding: 4px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.priorityGrade {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.assignedToWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.assignedToHeadline {
+    align-self: stretch;
+    color: #2a3647;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.assignedToNameWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    align-self: stretch;
+    height: 180px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 12px;
+}
+
+.assignedContact {
+    display: flex;
+    padding: 7px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+}
+
+.nameCircleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nameCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: #1fd7c1;
+    stroke-width: 2px;
+    stroke: #fff;
+    border-radius: 100px;
+    color: white;
+}
+
+.assignedName {
+    color: #000;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.subtasksWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.subtaskTitle {
+    align-self: stretch;
+    color: #2a3647;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.subtask {
+    display: flex;
+    height: 32px;
+    padding: 6px 16px;
+    align-items: center;
+    gap: 16px;
+}
+
+.subTasksCheckboxWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.subtaskCheckboxWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    height: 88px;
+    overflow-y: scroll;
+}
+
+#subtasks {
+    height: 88px;
+    overflow-y: scroll; 
+}
+
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.checkboxDescription {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.deleteWrapper {
+    color: #2a3647;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: transform 100ms ease-in-out;
+}
+
+.deleteWrapper:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(98%) saturate(407%) hue-rotate(155deg) brightness(93%) contrast(90%);
+    transform: scale(1.1);
+}
+
+.delete {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.addTaskHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.closeIcon {
+    cursor: pointer;
+}
+
+.overflow40px {
+    overflow-y: scroll;
+    height: 40px;
+}
+
+@media (max-width: 650px) {
+    .openTask {
+        max-width: 70vw;
+        padding: 16px 8px !important;
+    }
+
+    .cardHeadlineOverlay {
+        font-size: 48px;
+        word-break: break-all;
+    }
+
+    form {
+        margin-right: 0;
+    }
+
+    .edit-form-style {
+        max-width: 70vw;
+    }
+
+    .prioButtons {
+        flex-direction: column;
+    }
+
+    #assigned-text {
+        font-size: 12px;
+    }
+
+    #newSubtask {
+        font-size: 12px;
+    }
+
+    #input-due-date {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .priority {
+        padding: 0;
+    }
+
+    .priorityWrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 350px) {
+    .openTask {
+        text-align: center;
+    }
+
+    .edit-form-style {
+        padding: 12px !important;
+    }
+
+    .dateWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .cardHeadlineOverlay {
+        font-size: 32px;
+    }
+}
+
+@media (max-height: 1200px) {
+    .openTask {
+        overflow-y: scroll;
+    }
+}
