@@ -5,17 +5,14 @@ body {
     padding: 0;
     background-color: #f6f7f8;
 }
-
 h1 {
     font-size: 48px;
     padding-bottom: 48px;
 }
-
 .task {
     display: flex;
     justify-content: center;
 }
-
 form {
     background-color: white;
     padding: 50px;
@@ -23,7 +20,6 @@ form {
     height: 95vh;
     overflow-y: scroll;
 }
-
 .edit-form-style {
     border: 8px solid white;
     background-clip: padding-box;
@@ -31,27 +27,21 @@ form {
     padding-left: 32px;
     padding-top: 24px;
 }
-
 .edit-form-style::-webkit-scrollbar {
     width: 12px;
 }
-
 .edit-form-style::-webkit-scrollbar-thumb {
     background-color: darkgray;
     border-radius: 10px;
 }
-
 .edit-form-style::-webkit-scrollbar-track {
     background-color: white;
     border-radius: 12px;
 }
-
 input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #2A3647 !important;
 }
-
-
 .taskLeftSide,
 .taskRightSide {
     display: flex;
@@ -59,7 +49,6 @@ input:-webkit-autofill {
     gap: 8px;
     flex: 1;
 }
-
 .inputs,
 .textarea,
 .combobox {
@@ -74,35 +63,28 @@ input:-webkit-autofill {
     padding-left: 16px;
     font-family: "Inter", sans-serif;
 }
-
 .margin-bot {
     margin-bottom: 16px;
 }
-
 .textarea {
     height: 120px;
     resize: none;
     outline: none;
 }
-
 .prioButtons {
     display: flex;
     justify-content: space-between;
     gap: 8px;
 }
-
 .prio-button-svg-container {
     display: flex;
     flex-direction: column;
     margin-left: 8px;
 }
-
 .prio-button-svg-container svg {
     width: 16px;
     height: auto;
 }
-
-
 .prioButtons button {
     display: flex;
     align-items: center;
@@ -116,43 +98,35 @@ input:-webkit-autofill {
     cursor: pointer;
     font-size: 20px;
 }
-
 .prioButtons button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .prio-urgent.active {
     background-color: #ff3d00;
     color: white;
 }
-
 .prio-medium.active {
     background-color: #ffa800;
     color: white;
 }
-
 .prio-low.active {
     background-color: #7ae229;
     color: white;
 }
-
 .prio-urgent.active svg path,
 .prio-medium.active svg path,
 .prio-low.active svg path {
     fill: #ffffff;
 }
-
 .divider {
     background-color: rgba(95, 92, 92, 0.2);
     width: 2px;
     height: 348px;
     margin: 0 42px 0 60px;
 }
-
 .all {
     width: 100%;
 }
-
 .combobox {
     height: 36px;
     box-sizing: border-box;
@@ -163,16 +137,13 @@ input:-webkit-autofill {
     background-color: white;
     cursor: pointer;
 }
-
 .combobox img {
     width: 10px;
     height: auto;
 }
-
 .position-context {
     position: relative;
 }
-
 .items {
     position: absolute;
     top: 0;
@@ -186,7 +157,6 @@ input:-webkit-autofill {
     background-color: white;
     z-index: 100;
 }
-
 .items .item {
     display: flex;
     align-items: center;
@@ -196,60 +166,47 @@ input:-webkit-autofill {
     border-radius: 8px;
     margin-right: 10px;
 }
-
 .assigned-item {
     cursor: pointer;
 }
-
 .assigned-item:hover {
     background-color: #f6f7f8;
 }
-
 .assigned-item.active {
     background-color: #2a3647;
     color: white;
 }
-
 .category-item {
     cursor: pointer;
 }
-
 .category-item:hover {
     background-color: #f6f7f8;
 }
-
 .display-none {
     display: none;
 }
-
 .items img {
     height: 16px;
     width: auto;
     margin: 0 16px;
 }
-
 .items label {
     flex-grow: 1;
     margin-left: 8px;
     cursor: pointer;
 }
-
 .items input {
     margin-right: 16px;
 }
-
 .checkbox {
     background-color: white;
 }
-
 .checkbox:active {
     background-color: white;
 }
-
 .colored-star {
     color: red;
 }
-
 .initialCircle {
     width: 24px;
     height: 24px;
@@ -262,27 +219,22 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
 }
-
 footer {
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
     align-items: flex-end;
 }
-
 footer p {
     font-size: 12px;
 }
-
 .clear-and-create-button-container {
     display: flex;
     gap: 10px;
 }
-
 .clearText {
     color: black;
 }
-
 footer button {
     display: flex;
     align-items: center;
@@ -291,54 +243,45 @@ footer button {
     padding: 8px 12px;
     cursor: pointer;
 }
-
 .clear-button {
     background-color: rgb(246, 247, 248);
     border: 1px solid black;
     transition: all 100ms ease-in-out;
 }
-
 .clear-button:hover {
     cursor: pointer;
     color: #29ABE2;
     border: 2px solid #29ABE2;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
-
 .create-button {
     background-color: #2a3647;
     color: white;
     border: none;
     transition: all 100ms ease-in-out;
 }
-
 .create-button:hover {
     background-color: #29abe2;
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
-
 .clear-image {
     margin-left: 8px;
     height: 8px;
 }
-
 .create-image {
     margin-left: 8px;
     height: 12px;
     filter: brightness(0) invert(1);
     width: 12px;
 }
-
 .selected-user-circle {
     display: flex;
     flex-wrap: wrap;
 }
-
 .margin-top {
     margin-top: 8px;
 }
-
 .overlay {
     position: absolute;
     top: 0;
@@ -351,7 +294,6 @@ footer button {
     animation: slideAndFade 1s ease forwards;
     display: block;
 }
-
 .popup {
     padding: 20px;
     border-radius: 50px;
@@ -362,19 +304,16 @@ footer button {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .popup-content {
     text-align: center;
     font-size: 20px;
     color: white;
 }
-
 .subtasks-input-container {
     position: relative;
     display: flex;
     margin-bottom: 6px;
 }
-
 .subtasks-input-container svg {
     position: absolute;
     right: 5px;
@@ -382,57 +321,47 @@ footer button {
     cursor: pointer;
     margin-right: 8px;
 }
-
 .subtasks-input-container svg:hover {
     background-color: #d1d1d1;
     border-radius: 100%;
 }
-
 .new-subtask-text {
     margin-left: 32px;
     margin-top: 6px;
     margin-bottom: 6px;
 }
-
 .new-sub-task-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .new-sub-task-container img {
     margin-right: 5px;
     cursor: pointer;
 }
-
 .new-sub-task-container:hover {
     background-color: #e5e5e5;
     border-radius: 8px;
 }
-
 .subtasks-container {
     max-height: 127px;
     overflow-y: scroll;
 }
-
 .subtask-edit-field {
     border: none;
     outline: none;
 }
-
 .failure {
     color: #ff4057;
     font-size: 12px;
     padding: 8px;
 }
-
 .ModalAddTask {
     position: fixed;
     background-color: white;
     padding: 25px;
     border-radius: 10px;
 }
-
 .modalBackground {
     background-color: rgba(0, 0, 0, 0.268);
     position: fixed;
@@ -444,11 +373,9 @@ footer button {
     justify-content: center;
     align-items: center;
 }
-
 .d-none {
     display: none;
 }
-
 .hover-style {
     display: flex;
     justify-content: center;
@@ -456,59 +383,47 @@ footer button {
     padding: 8px;
     transition: all 100ms ease-in-out;
 }
-
 .hover-style:hover {
     background-color: #d1d1d1;
     border-radius: 100%;
 }
-
-
 @keyframes slideAndFade {
     0% {
         transform: translateY(100%);
         opacity: 0;
     }
-
     10% {
         transform: translateY(0);
         opacity: 1;
     }
-
     80% {
         transform: translateY(0);
         opacity: 1;
     }
-
     100% {
         visibility: hidden;
         opacity: 0;
     }
 }
-
 @media (max-width: 1000px) {
     .task {
         flex-direction: column;
     }
-
     .divider {
         display: none;
     }
-
     .taskRightSide {
         margin-top: 8px;
     }
-
     h1 {
         text-align: center;
     }
 }
-
 @media (max-width: 650px) {
     footer {
         flex-direction: column;
         align-items: center;
     }
-
     footer p {
         padding-bottom: 24px;
     }

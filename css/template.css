@@ -4,16 +4,13 @@
     margin-block-start: 0;
     margin-block-end: 0;
 }
-
 .active {
     background-color: black;
 }
-
 body {
     font-family: "Inter", sans-serif;
     font-weight: 300;
 }
-
 .grid {
     display: grid;
     grid-template-columns: 232px 1fr;
@@ -21,7 +18,6 @@ body {
     gap: 0px 0px;
     grid-template-areas: ". .";
 }
-
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -34,7 +30,6 @@ body {
     position: fixed;
     width: 232px;
 }
-
 .logoSidebar {
     display: flex;
     align-items: center;
@@ -42,12 +37,10 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
 .navigation {
     display: flex;
     flex-direction: column;
 }
-
 .navigationLinks {
     cursor: pointer;
     display: flex;
@@ -56,49 +49,40 @@ body {
     flex-direction: column;
     gap: 15px;
 }
-
 .linkFullWidth {
     width: 100%;
     padding: 6px 0;
 }
-
 .linkFullWidth:hover {
     background-color: #35455b;
 }
-
 .linkContainer {
     display: flex;
     justify-content: center;
 }
-
 a {
     color: inherit;
     text-decoration: inherit;
 }
-
 .linkText {
     color: white;
     font-size: 16px;
 }
-
 .linkWrapper {
     gap: 8px;
     display: flex;
     align-items: center;
     width: 150px;
 }
-
 .legalLink {
     color: #a8a8a8;
     font-weight: 100;
     cursor: pointer;
 }
-
 .legalLink:hover {
     color: #29abe2;
     font-weight: bold;
 }
-
 .legal {
     display: flex;
     flex-direction: column;
@@ -107,7 +91,6 @@ a {
     justify-content: flex-end;
     margin-bottom: 20px;
 }
-
 nav {
     width: 100%;
     height: 96px;
@@ -118,7 +101,6 @@ nav {
     background-color: white;
     z-index: 2;
 }
-
 .navbarMobile {
     display: none;
     width: 100vw;
@@ -128,27 +110,22 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
 .productLabel {
     font-weight: 500;
     margin-left: 20px;
 }
-
 .avatarWrapper {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-right: 20px;
 }
-
 .question {
     cursor: pointer;
 }
-
 .question:hover {
     transform: scale(1.1);
 }
-
 .dropbtn {
     color: #29abe2;
     font-weight: 700;
@@ -161,12 +138,10 @@ nav {
     border-radius: 100px;
     border: solid #2a3647 3px;
 }
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -179,30 +154,24 @@ nav {
     border-radius: 20px 0 20px 20px;
     overflow: hidden;
 }
-
 .dropdown-content a {
     color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
 .dropdown-content a:hover {
     background-color: #3a495f;
 }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .dropdown:hover .dropbtn {
     background-color: #2d3153;
 }
-
 .mobileHeaderLogo {
     display: none;
 }
-
 @media (max-width: 900px) {
     .grid {
         display: grid;
@@ -211,7 +180,6 @@ nav {
         gap: 0px 0px;
         grid-template-areas: ". .";
     }
-
     .sidebar {
         width: 100vw;
         height: 80px;
@@ -220,39 +188,31 @@ nav {
         flex-direction: row;
         top: unset;
     }
-
     nav {
         width: 100vw;
         height: 80px;
     }
-
     .mobileHeaderLogo {
         display: block;
         margin-left: 20px;
     }
-
     .productLabel {
         display: none;
     }
-
     .legal {
         display: none;
     }
-
     .navBarLogo {
         display: none;
     }
-
     .navigationLinks {
         flex-direction: row;
         width: 100%;
         align-items: center;
     }
-
     .linkText {
         font-size: 14px;
     }
-
     .linkWrapper {
         flex-direction: column;
         justify-content: center;
@@ -260,13 +220,11 @@ nav {
         gap: 4px;
     }
 }
-
 .testBackground {
     width: 100%;
     height: 100%;
     background-color: #2d3153;
 }
-
 .background.active {
     background-color: #ff3d00;
 }
