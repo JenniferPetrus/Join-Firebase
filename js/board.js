@@ -106,7 +106,7 @@ async function moveTo(category) {
 }
 
 async function clickTo(taskId, category) {
-    let foundIndex = tasks.findIndex((task) => task.id === taskId);
+    let foundIndex = tasks.findIndex((task) => task.id == taskId);
     if (foundIndex !== -1) {
         tasks[foundIndex].progress = category;
         updateTasks();
