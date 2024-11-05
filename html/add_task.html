@@ -29,7 +29,8 @@
                         <div class="taskLeftSide">
                             <div class="margin-bot">
                                 <p>Title<span class="colored-star">*</span></p>
-                                <input id="input-title" placeholder="Enter a title" class="inputs" type="text" required>
+                                <input id="input-title" placeholder="Enter a title" class="inputs" type="text">
+                                <div id="titleError" class="error-message"></div>
                             </div>
                             <div class="margin-bot">
                                 <p>Description</p>
@@ -54,7 +55,8 @@
                         <div class="taskRightSide">
                             <div class="margin-bot">
                                 <p>Due date<span class="colored-star">*</span></p>
-                                <input id="input-due-date" placeholder="dd/mm/yyyy" class="inputs" type="date" required>
+                                <input id="input-due-date" placeholder="dd/mm/yyyy" class="inputs" type="date">
+                                <div id="dateError" class="error-message"></div>
                             </div>
                             <div class="margin-bot">
                                 <p>Prio</p>

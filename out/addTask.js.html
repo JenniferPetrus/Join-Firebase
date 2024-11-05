@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: addTask.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: addTask.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Array to store assigned tasks.
  * @type {Array}
  */
@@ -6,7 +34,7 @@ let assigneds = [];
 
 /**
  * Categories of tasks.
- * @type {Array<{label: string}>}
+ * @type {Array&lt;{label: string}>}
  */
 let categories = [{ label: "Technical Task" }, { label: "User Story" }];
 
@@ -122,11 +150,11 @@ function getCheckBoxAreaTemplateForAssigned() {
             let firstName = parts[0];
             let lastName = parts.length > 1 ? parts[1] : "";
             return /*html*/ `
-            <div class="item assigned-item ${assigned.selected ? "active" : ""}" onclick="toggleActiveAssignedItem(this)">
-                <div class="initialCircle margin-top" style="background-color: ${assigned.bg};">${firstName.charAt(0)}${lastName.charAt(0)}</div>
-                <label>${firstName} ${lastName}</label>
-                <input class="checkbox" type="checkbox" ${assigned.selected ? "checked" : ""}>
-            </div>
+            &lt;div class="item assigned-item ${assigned.selected ? "active" : ""}" onclick="toggleActiveAssignedItem(this)">
+                &lt;div class="initialCircle margin-top" style="background-color: ${assigned.bg};">${firstName.charAt(0)}${lastName.charAt(0)}&lt;/div>
+                &lt;label>${firstName} ${lastName}&lt;/label>
+                &lt;input class="checkbox" type="checkbox" ${assigned.selected ? "checked" : ""}>
+            &lt;/div>
         `;
         })
         .join("");
@@ -140,9 +168,9 @@ function getCeckBoxAreaTemplateForCategory() {
     return categories
         .map((category) => {
             return /*html*/ `
-            <div class="item category-item" onclick="selectedCategoryItem(this)">
-                <label>${category.label}</label>
-            </div>
+            &lt;div class="item category-item" onclick="selectedCategoryItem(this)">
+                &lt;label>${category.label}&lt;/label>
+            &lt;/div>
         `;
         })
         .join("");
@@ -217,8 +245,8 @@ function rotateIcon(id) {
 function clearTask() {
     let inputs = document.getElementsByClassName("inputs");
     let textAreas = document.getElementsByClassName("textarea");
-    for (let i = 0; i < inputs.length; i++) inputs[i].value = "";
-    for (let i = 0; i < textAreas.length; i++) textAreas[i].value = "";
+    for (let i = 0; i &lt; inputs.length; i++) inputs[i].value = "";
+    for (let i = 0; i &lt; textAreas.length; i++) textAreas[i].value = "";
     document.getElementById("category-text").innerHTML = "Select task category";
     document.getElementById("selectedUserCircle").innerHTML = "";
     assigneds.forEach((assigned) => (assigned.selected = false));
@@ -233,7 +261,7 @@ function clearTask() {
  */
 function closeCheckBoxAreaForAssigned() {
     let checkBoxItems = document.getElementById("checkBoxItemsAssigned");
-    if (checkBoxItems && checkBoxItems.innerHTML.trim() !== "") {
+    if (checkBoxItems &amp;&amp; checkBoxItems.innerHTML.trim() !== "") {
         checkBoxItems.innerHTML = "";
         rotateIcon("nav-image-assigned");
     }
@@ -244,7 +272,7 @@ function closeCheckBoxAreaForAssigned() {
  */
 function closeCheckBoxAreaForCategory() {
     let checkBoxItems = document.getElementById("itemsCategory");
-    if (checkBoxItems && checkBoxItems.innerHTML.trim() !== "") {
+    if (checkBoxItems &amp;&amp; checkBoxItems.innerHTML.trim() !== "") {
         checkBoxItems.innerHTML = "";
         rotateIcon("nav-image-category");
     }
@@ -281,46 +309,6 @@ async function createTask() {
             initBoard();
         }
     }
-}
-
-function createTask() {
-    document.getElementById('titleError').innerText = '';
-    document.getElementById('dateError').innerText = '';
-    document.getElementById('failureCategory').innerText = '';
-
-    const title = document.getElementById('input-title').value.trim();
-    const dueDate = document.getElementById('input-due-date').value;
-    const category = document.getElementById('category-text').innerText;
-    const titleInput = document.getElementById('input-title');
-    const titleError = document.getElementById('titleError');
-    
-    titleInput.addEventListener('input', function() {
-        titleError.textContent = '';
-    });
-    
-    const dueDateInput = document.getElementById('input-due-date');
-    const dateError = document.getElementById('dateError');
-    
-    dueDateInput.addEventListener('input', function() {
-        dateError.textContent = '';
-    });
-    let hasError = false;
-    if (!title) {
-        document.getElementById('titleError').innerText = 'Title is required.';
-        hasError = true;
-    }
-    if (!dueDate) {
-        document.getElementById('dateError').innerText = 'Due date is required.';
-        hasError = true;
-    }
-    if (category === 'Select task category') {
-        document.getElementById('failureCategory').innerText = 'Category is required.';
-        hasError = true;
-    }
-    if (hasError) {
-        return;
-    }
-    console.log('Task created:', { title, dueDate, category });
 }
 
 /**
@@ -397,7 +385,7 @@ function editSubTask(id) {
         return;
     let subtaskTextElement = subtaskContainer.querySelector(".new-subtask-text");
     let currentText = subtaskTextElement.innerText;
-    subtaskTextElement.innerHTML = `<input class="subtask-edit-field" type="text" value="${currentText}" onblur="saveEditedSubTask('${id}', this.value)">`;
+    subtaskTextElement.innerHTML = `&lt;input class="subtask-edit-field" type="text" value="${currentText}" onblur="saveEditedSubTask('${id}', this.value)">`;
     subtaskTextElement.querySelector("input").focus();
 }
 
@@ -418,4 +406,26 @@ function saveEditedSubTask(id, newText) {
 function deleteSubTask(id) {
     let subtaskToRemove = document.getElementById(id);
     subtaskToRemove.remove();
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addSubtask">addSubtask</a></li><li><a href="global.html#assigneds">assigneds</a></li><li><a href="global.html#categories">categories</a></li><li><a href="global.html#clearTask">clearTask</a></li><li><a href="global.html#closeCheckBoxAreaForAssigned">closeCheckBoxAreaForAssigned</a></li><li><a href="global.html#closeCheckBoxAreaForCategory">closeCheckBoxAreaForCategory</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#createdFromBoard">createdFromBoard</a></li><li><a href="global.html#deleteSubTask">deleteSubTask</a></li><li><a href="global.html#editSubTask">editSubTask</a></li><li><a href="global.html#editSubTaskClick">editSubTaskClick</a></li><li><a href="global.html#getCeckBoxAreaTemplateForCategory">getCeckBoxAreaTemplateForCategory</a></li><li><a href="global.html#getCheckBoxAreaTemplateForAssigned">getCheckBoxAreaTemplateForAssigned</a></li><li><a href="global.html#getTaskData">getTaskData</a></li><li><a href="global.html#initTask">initTask</a></li><li><a href="global.html#isCategoryValidated">isCategoryValidated</a></li><li><a href="global.html#openOrCloseCheckBoxAreaForAssigned">openOrCloseCheckBoxAreaForAssigned</a></li><li><a href="global.html#openOrCloseCheckBoxAreaForCategory">openOrCloseCheckBoxAreaForCategory</a></li><li><a href="global.html#progress">progress</a></li><li><a href="global.html#rotateIcon">rotateIcon</a></li><li><a href="global.html#saveEditedSubTask">saveEditedSubTask</a></li><li><a href="global.html#selectedCategoryItem">selectedCategoryItem</a></li><li><a href="global.html#subtaskId">subtaskId</a></li><li><a href="global.html#toggleActiveAssignedItem">toggleActiveAssignedItem</a></li><li><a href="global.html#updateActiveInitialCircles">updateActiveInitialCircles</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Nov 05 2024 11:00:31 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

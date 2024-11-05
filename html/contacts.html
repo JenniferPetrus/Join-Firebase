@@ -63,16 +63,19 @@
                                 <form onsubmit="createContact(); return false;">
                                     <div class="inputFields">
                                         <div class="singleInput">
-                                            <input required id="contact-name" placeholder="Name" type="text">
+                                            <input id="contact-name" placeholder="Name" type="text">
                                             <img src="../img/person.svg">
+                                            <span class="error-message" id="name-error" style="color: red; display: none;"></span>
                                         </div>
                                         <div class="singleInput">
-                                            <input required id="contact-email" placeholder="Email" type="email">
+                                            <input id="contact-email" placeholder="Email" type="email">
                                             <img src="../img/mail.svg">
+                                            <span class="error-message" id="email-error" style="color: red; display: none;"></span>
                                         </div>
                                         <div class="singleInput">
-                                            <input required id="contact-tel" placeholder="Number" type="text">
+                                            <input id="contact-tel" placeholder="Number" type="text">
                                             <img src="../img/telephone.svg">
+                                            <span class="error-message" id="tel-error" style="color: red; display: none;"></span>
                                         </div>
                                     </div>
                                     <div class="styleBtn">

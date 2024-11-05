@@ -1,6 +1,34 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: register.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: register.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Array to store user data.
- * @type {Array<{name: string, email: string, password: string}>}
+ * @type {Array&lt;{name: string, email: string, password: string}>}
  */
 let users = [];
 
@@ -19,58 +47,14 @@ async function initRegister() {
  * @async
  */
 async function register() {
-    let nameInput = document.getElementById("inputName");
-    let emailInput = document.getElementById("inputEmail");
-    let passwordInput = document.getElementById("inputPassword");
-    let confirmPasswordInput = document.getElementById("inputConfirmPassword");
-    
-    let nameError = document.getElementById("nameError");
-    let emailError = document.getElementById("emailError");
-    let passwordError = document.getElementById("passwordError");
-    let confirmPasswordError = document.getElementById("confirmPasswordError");
-    
-    nameError.innerHTML = "";
-    emailError.innerHTML = "";
-    passwordError.innerHTML = "";
-    confirmPasswordError.innerHTML = "";
-
-    let hasError = false;
-
-    if (nameInput.value.trim() === "") {
-        nameError.innerHTML = "Please enter your name";
-        hasError = true;
-    }
-    if (emailInput.value.trim() === "") {
-        emailError.innerHTML = "Please enter your email";
-        hasError = true;
-    }
-    if (passwordInput.value.trim() === "") {
-        passwordError.innerHTML = "Please enter your password";
-        hasError = true;
-    }
-    if (confirmPasswordInput.value.trim() === "") {
-        confirmPasswordError.innerHTML = "Please confirm your password";
-        hasError = true;
-    }
-    let checkbox = document.querySelector(".checkbox-input");
-    let checkboxError = document.getElementById("checkboxError");
-    if (!checkbox.checked) {
-        checkboxError.innerHTML = "Please accept the privacy policy";
-        hasError = true;
-    } else {
-        checkboxError.innerHTML = ""; 
-    }
-    if (hasError) {
-        return;
-    }
     if (isPasswordConfirmed()) {
         let message = 'You Signed Up successfully';
         let newUser = {
-            name: nameInput.value,
-            email: emailInput.value,
-            password: passwordInput.value,
+            name: inputName.value,
+            email: inputEmail.value,
+            password: inputPassword.value,
         };
-        let userExists = users.find((user) => user.email === newUser.email && user.name === newUser.name);
+        let userExists = users.find((user) => user.email === newUser.email &amp;&amp; user.name === newUser.name);
         if (userExists) {
             let failureText = document.getElementById("failureText");
             failureText.innerHTML = "User already exists";
@@ -85,24 +69,6 @@ async function register() {
         await loadUsers();
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    let inputs = document.getElementsByTagName("input");
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener("input", function () {
-            document.getElementById("nameError").innerHTML = ""; 
-            document.getElementById("emailError").innerHTML = ""; 
-            document.getElementById("passwordError").innerHTML = "";
-            document.getElementById("confirmPasswordError").innerHTML = "";
-            document.getElementById("failureText").innerHTML = "";
-        });
-    }
-    let checkbox = document.querySelector(".checkbox-input");
-    checkbox.addEventListener("change", function () {
-        let checkboxError = document.getElementById("checkboxError");
-        checkboxError.innerHTML = ""; 
-    });
-});
 
 /**
  * Navigates the user back to the login page.
@@ -188,3 +154,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#backToLogIn">backToLogIn</a></li><li><a href="global.html#initRegister">initRegister</a></li><li><a href="global.html#isPasswordConfirmed">isPasswordConfirmed</a></li><li><a href="global.html#loadUsers">loadUsers</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#users">users</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Nov 05 2024 11:01:25 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -27,32 +27,37 @@
             <div class="gap16">
                 <div class="input-container">
                     <div class="input">
-                        <input id="inputName" placeholder="Name" type="text" required>
+                        <input id="inputName" placeholder="Name" type="text">
                         <img src="../../img/person.svg">
+                        <div id="nameError" class="error-message"></div>
                     </div>
 
                     <div class="input">
-                        <input id="inputEmail" placeholder="E-Mail" type="email" required>
+                        <input id="inputEmail" placeholder="E-Mail" type="email">
                         <img src="../../img/mail.svg">
+                        <div id="emailError" class="error-message"></div>
                     </div>
 
                     <div class="input">
-                        <input id="inputPassword" placeholder="Password" type="password" required>
+                        <input id="inputPassword" placeholder="Password" type="password">
                         <img src="../../img/lock.svg" class="togglePasswordVisibility">
+                        <div id="passwordError" class="error-message"></div>
                     </div>
                     
                     <div id="confirm-password-container" class="input">
-                        <input id="inputConfirmPassword" placeholder="Confirm password" type="password" required>
+                        <input id="inputConfirmPassword" placeholder="Confirm password" type="password">
                         <img src="../../img/lock.svg" class="togglePasswordVisibility">
+                        <div id="confirmPasswordError" class="error-message"></div>
                     </div>
                                       
                 </div>
                 <div id="failureText" class="passwordDontMatchText"></div>
                 <div class="checkbox">
                     <div>
-                        <input class="checkbox-input" type="checkbox" required>
+                        <input class="checkbox-input" type="checkbox">
                     </div>
-                    <span>I accept the<span class="blue"> privacy Policy</span></span>
+                    <span>I accept the<span class="blue"><a href="../../html/privacy.html" target="_blank"> Privacy Policy</a></span></span>
+                    <div id="checkboxError" class="error-message" style="margin-bottom: 50px;"></div>
                 </div>
             </div>
             <div class="style-btns">
@@ -62,8 +67,8 @@
     </div>
 
     <footer>
-        <a href="../html/privacy.html" target="_blank">Privacy Policy</a>
-        <a href="../html/legal.html" target="_blank">Legal notice</a>
+        <a href="../../html/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="../../html/legal.html" target="_blank">Legal notice</a>
     </footer>
 </body>
 

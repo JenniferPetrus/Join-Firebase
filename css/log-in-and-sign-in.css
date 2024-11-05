@@ -39,7 +39,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 32px;
     padding: 48px 115px 48px 115px;
     box-sizing: border-box;
     position: relative;
@@ -53,11 +52,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    margin-bottom: 20px;
 }
 h1 {
     text-align: center;
     font-size: 61px;
+    margin-bottom: 10px;
 }
 .underline {
     height: 3px;
@@ -206,6 +206,12 @@ a:hover {
     margin-left: 50px;
     margin-top: 61px;
     z-index: 2;
+}
+.error-message {
+    color: red;
+    position: absolute;
+    font-size: 14px;
+    margin-top: 5px;
 }
 @keyframes moveAndFreeze {
     0% {

@@ -33,16 +33,20 @@
 
             <div class="input-container">
                 <div class="input">
-                    <input placeholder="E-Mail" type="email" id="emailInput" required>
+                    <input placeholder="E-Mail" type="email" id="emailInput">
                     <img src="../../img/mail.svg">
+                    <div id="emailError" class="error-message"></div>
                 </div>
 
                 <div class="input">
-                    <input placeholder="Password" type="password" id="passwordInput" required>
+                    <input placeholder="Password" type="password" id="passwordInput">
                     <img id="togglePasswordVisibility" src="../../img/lock.svg">
+                    <div id="passwordError" class="error-message"></div>
                 </div>
 
                 <div id="failureTextInLogin" class="passwordDontMatchText"></div>
+
+                <div id="failureTextInLogin" class="passwordDontMatchText error-message"></div>
 
                 <div class="checkbox">
                     <div><input class="checkbox-input" type="checkbox"></div>

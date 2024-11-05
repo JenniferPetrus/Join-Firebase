@@ -3,6 +3,7 @@
 }
 body {
     background-color: #f6f7f8;
+    overflow-x: hidden;
 }
 #renderContent {
     display: flex;
@@ -308,7 +309,7 @@ h5 {
         align-items: center;
         margin-left: unset;
         margin-right: unset;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
         margin-right: 16px;
         margin-left: 16px;
     }

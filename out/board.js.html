@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: board.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: board.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Array to store task objects.
  * @type {Array}
  */
@@ -105,31 +133,6 @@ async function moveTo(category) {
     await setItem("tasks", JSON.stringify(tasks));
 }
 
-async function clickTo(taskId, category) {
-    let foundIndex = tasks.findIndex((task) => task.id === taskId);
-    if (foundIndex !== -1) {
-        tasks[foundIndex].progress = category;
-        updateTasks();
-        await setItem("tasks", JSON.stringify(tasks));
-    } else {
-        console.error("Element nicht gefunden in tasks");
-    }
-}
-
-function toggleDropdown(element) {
-    const dropdownContent = element.nextElementSibling;
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-}
-
-window.onclick = function(event) {
-    if (!event.target.matches('.three-dots')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].style.display = "none"; 
-        }
-    }
-};
-
 /**
  * Generates HTML content for a task card.
  * @param {Object} task - The task object to generate HTML for.
@@ -154,7 +157,7 @@ function getCircleTemplate(task) {
     return task.assignedTo.map((person) => {
         let initials = person.name.split(" ").map((namePart) => namePart.charAt(0)).join("");
         let backgroundColor = person.bg ? ` style="background-color: ${person.bg};"` : "";
-        return `<div class="profileBadge"${backgroundColor}>${initials}</div>`;
+        return `&lt;div class="profileBadge"${backgroundColor}>${initials}&lt;/div>`;
     }).join("");
 }
 
@@ -260,12 +263,12 @@ function getAssignedToTemplate(assignedTo) {
     return assignedTo.map((person) => {
             let initials = person.name.split(" ").map((name) => name[0]).join("");
             return /*html*/ `
-            <div class="assignedContact">
-                <div class="nameCircleWrapper">
-                    <div class="nameCircle" style="background-color: ${person.bg};">${initials}</div>
-                    <p class="assignedName">${person.name}</p>
-                </div>
-            </div>`;}).join("");
+            &lt;div class="assignedContact">
+                &lt;div class="nameCircleWrapper">
+                    &lt;div class="nameCircle" style="background-color: ${person.bg};">${initials}&lt;/div>
+                    &lt;p class="assignedName">${person.name}&lt;/p>
+                &lt;/div>
+            &lt;/div>`;}).join("");
 }
 
 /**
@@ -278,10 +281,10 @@ function getSubtasksTemplate(subtasks, taskId) {
     return subtasks.map((subtask) => {
             const isChecked = subtask.completed ? "checked" : "";
             return /*html*/ `
-            <div class="subtask">
-                <input class="checkbox" type="checkbox" ${isChecked} onclick="toggleSubtaskCompleted(${taskId}, ${subtask.id})"/>
-                <div class="checkboxDescription">${subtask.title}</div>
-            </div>`;}).join("");
+            &lt;div class="subtask">
+                &lt;input class="checkbox" type="checkbox" ${isChecked} onclick="toggleSubtaskCompleted(${taskId}, ${subtask.id})"/>
+                &lt;div class="checkboxDescription">${subtask.title}&lt;/div>
+            &lt;/div>`;}).join("");
 }
 
 /**
@@ -360,7 +363,7 @@ async function editTask() {
 
 /**
  * Returns an array of selected (assigned) users based on the user selection in the UI.
- * @returns {Array<Object>} Array of selected users with their name and background color.
+ * @returns {Array&lt;Object>} Array of selected users with their name and background color.
  */
 function getSelectedAssigneds() {
     return assigneds.filter((assigned) => assigned.selected).map((assigned) => {
@@ -368,15 +371,26 @@ function getSelectedAssigneds() {
             };
         });
 }
-function toggleDropdown(element) {
-    const dropdownContent = element.nextElementSibling; // Das Dropdown-Menü ist das nächste Geschwisterelement
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-}
-window.onclick = function(event) {
-    if (!event.target.matches('.three-dots')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].style.display = "none";
-        }
-    }
-}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeCardModal">closeCardModal</a></li><li><a href="global.html#currentDraggedElement">currentDraggedElement</a></li><li><a href="global.html#currentTaskModal">currentTaskModal</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#getAssignedToTemplate">getAssignedToTemplate</a></li><li><a href="global.html#getCardModal">getCardModal</a></li><li><a href="global.html#getCircleTemplate">getCircleTemplate</a></li><li><a href="global.html#getPrioSVG">getPrioSVG</a></li><li><a href="global.html#getSelectedAssigneds">getSelectedAssigneds</a></li><li><a href="global.html#getSubtasksTemplate">getSubtasksTemplate</a></li><li><a href="global.html#getTaskTemplate">getTaskTemplate</a></li><li><a href="global.html#handleSearchChange">handleSearchChange</a></li><li><a href="global.html#highlight">highlight</a></li><li><a href="global.html#initBoard">initBoard</a></li><li><a href="global.html#loadAddTaskTemplate">loadAddTaskTemplate</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#openCardModal">openCardModal</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#tasks">tasks</a></li><li><a href="global.html#toggleSubtaskCompleted">toggleSubtaskCompleted</a></li><li><a href="global.html#updateFilteredTasks">updateFilteredTasks</a></li><li><a href="global.html#updateTasks">updateTasks</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Nov 05 2024 11:00:41 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

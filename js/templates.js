@@ -1,3 +1,13 @@
+/**
+ * Generates HTML content for displaying detailed information about a contact.
+ * @param {string} name - The name of the contact.
+ * @param {string} mail - The email address of the contact.
+ * @param {string} number - The phone number of the contact.
+ * @param {string} bg - The background color for the contact's initial circle.
+ * @param {string} initials - The initials of the contact.
+ * @param {number} i - The index of the contact in the contacts list.
+ * @returns {string} HTML content for the contact's detailed information.
+ */
 function generateHTMLshowContact(name, mail, number, bg, initials, i) {
     return /*html*/ ` 
     <div class="contanctsHeader">
@@ -59,6 +69,16 @@ function generateHTMLshowContact(name, mail, number, bg, initials, i) {
     `;
 }
 
+/**
+ * Generates HTML content for the contact editing form.
+ * @param {string} bg - The background color for the contact's initial circle.
+ * @param {string} initials - The initials of the contact.
+ * @param {string} name - The name of the contact.
+ * @param {string} mail - The email address of the contact.
+ * @param {string} number - The phone number of the contact.
+ * @param {number} i - The index of the contact in the contacts list.
+ * @returns {string} HTML content for the contact editing form.
+ */
 function generateEditContactHTML(bg, initials, name, mail, number, i) {
     return /*html*/ `
     <div class="wholePop">
@@ -103,6 +123,10 @@ function generateEditContactHTML(bg, initials, name, mail, number, i) {
     `;
 }
 
+/**
+ * Generates SVG HTML content for a priority indicator with "Urgent" status.
+ * @returns {string} HTML content of the SVG for the "Urgent" priority indicator.
+ */
 function getPrioUrgentSVG() {
     return /*html*/ `
         <svg width="29" height="24" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +136,10 @@ function getPrioUrgentSVG() {
     `;
 }
 
+/**
+ * Generates SVG HTML content for a priority indicator with "Medium" status.
+ * @returns {string} HTML content of the SVG for the "Medium" priority indicator.
+ */
 function getPrioMediumSVG() {
     return /*html*/ `
         <svg width="26" height="16" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,6 +154,10 @@ function getPrioMediumSVG() {
     `;
 }
 
+/**
+ * Generates SVG HTML content for a priority indicator with "Low" status.
+ * @returns {string} HTML content of the SVG for the "Low" priority indicator.
+ */
 function getPrioLowSVG() {
     return /*html*/ `
         <svg width="29" height="24" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,15 +167,35 @@ function getPrioLowSVG() {
     `;
 }
 
+/**
+ * Generates HTML content for the task template.
+ * @param {Object} task - The task object containing all necessary data.
+ * @param {string} assignedToHtml - HTML content for displaying assigned contacts.
+ * @param {string} subtasksHtml - HTML content for displaying subtasks.
+ * @param {string} prioSVG - HTML content for the priority indicator SVG.
+ * @returns {string} HTML content for the task template.
+ */
 function generateTaskTemplateHTML(task, assignedToHtml, subtasksHtml, prioSVG) {
     return /*html*/ `
     <div id="cardModal-container">
         <div id="cardModal" class="openCardBackground">
                 <div class="openTask edit-form-style">
-                    <div class="cardHeader">
-                    <div class="cardType" style="border: 2px solid white; background-color: ${task.category === "User Story" ? "#0038ff" : task.category === "Technical Task" ? "#1FD7C1" : "defaultBackgroundColor"};">
-
+                <div class="cardHeader">
+                        <div class="cardType" style="border: 2px solid white; background-color: ${task.category === "User Story" ? "#0038ff" : task.category === "Technical Task" ? "#1FD7C1" : "defaultBackgroundColor"};">
                             <p class="cardTypeDescription">${task.category}</p>
+                        </div>
+                        <div class="dropdown">
+                            <div class="three-dots" onclick="toggleDropdown(this)">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="dropdown-content">
+                                <button onclick="clickTo('${task.id}', 'toDo')">Move to To Do</button>
+                                <button onclick="clickTo('${task.id}', 'inProgress')">Move to In Progress</button>
+                                <button onclick="clickTo('${task.id}', 'feedback')">Move to Feedback</button>
+                                <button onclick="clickTo('${task.id}', 'done')">Move to Done</button>
+                            </div>
                         </div>
                         <svg onclick="closeCardModal('cardModal-container')" class="closeIcon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_12_1578" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
@@ -198,6 +250,10 @@ function generateTaskTemplateHTML(task, assignedToHtml, subtasksHtml, prioSVG) {
     `;
 }
 
+/**
+ * Generates HTML template for adding a new task.
+ * @returns {string} HTML content for the add task template.
+ */
 function addTaskTemplate() {
     return /*html*/ `
 <div id="popup-container"></div>
@@ -360,6 +416,10 @@ function addTaskTemplate() {
 </div>`;
 }
 
+/**
+ * Generates HTML template for editing a task.
+ * @returns {string} HTML content for the edit task template.
+ */
 function editTaskTemplate() {
     return /*html*/ `
 <div id="popup-container"></div>
@@ -507,6 +567,12 @@ function editTaskTemplate() {
 </div>`;
 }
 
+/**
+ * Generates HTML content for editing subtasks.
+ * @param {string} uniqueId - A unique identifier for the subtask.
+ * @param {string} editSubtask - The text content of the subtask.
+ * @returns {string} HTML content for editing subtasks.
+ */
 function generateEditSubtasksHTML(uniqueId, editSubtask) {
     return /*html*/ `
     <div onclick="editSubTask('${uniqueId}')" class="new-sub-task-container" id="${uniqueId}">
@@ -518,6 +584,10 @@ function generateEditSubtasksHTML(uniqueId, editSubtask) {
 </div>`;
 }
 
+/**
+ * Generates HTML content for a popup notification template.
+ * @returns {string} HTML content for the popup notification.
+ */
 function getPopUpTemplate(popupMessage) {
     return /*html*/ `
     <div class="overlay">
@@ -530,6 +600,11 @@ function getPopUpTemplate(popupMessage) {
     `;
 }
 
+/**
+ * Generates HTML content for the contact register header based on the first letter of contact names.
+ * @param {string} sortedByLetter - The letter by which the contacts are sorted.
+ * @returns {string} HTML content for the contact register header.
+ */
 function generateRegisterHTML(sortedByLetter) {
     return /*html*/ `
     <div class="letterWrapper">
@@ -539,6 +614,15 @@ function generateRegisterHTML(sortedByLetter) {
     `;
 }
 
+/**
+ * Renders individual contact entries for the contact register.
+ * @param {number} i - The index of the contact in the contacts list.
+ * @param {string} bg - The background color for the contact's initial circle.
+ * @param {string} initials - The initials of the contact.
+ * @param {string} name - The name of the contact.
+ * @param {string} mail - The email address of the contact.
+ * @returns {string} HTML content for an individual contact entry.
+ */
 function renderContactToRegister(i, bg, initials, name, mail) {
     return /*html*/ `    
     <div id="contact${i}" onclick="toggleContact(${i}); openMobileName()" class="name contact-item">
@@ -550,6 +634,13 @@ function renderContactToRegister(i, bg, initials, name, mail) {
     </div>`;
 }
 
+/**
+ * Generates HTML content for displaying subtask progress within a task card.
+ * @param {number} progressValue - The completion percentage of the subtasks.
+ * @param {number} completedSubtasks - The number of completed subtasks.
+ * @param {number} totalSubtasks - The total number of subtasks.
+ * @returns {string} HTML content for subtask progress display.
+ */
 function generateTodoSubtask(progressValue, completedSubtasks, totalSubtasks) {
     return /*html*/ `
     <div class="subTaskWrapper">
@@ -561,6 +652,14 @@ function generateTodoSubtask(progressValue, completedSubtasks, totalSubtasks) {
      </div>`;
 }
 
+/**
+ * Generates HTML content for a task card modal, including subtask progress, assigned contacts, and priority.
+ * @param {Object} task - The task object containing all necessary data.
+ * @param {string} subTaskWrapperHTML - HTML content for displaying subtask progress.
+ * @param {string} circleTemplate - HTML content for displaying assigned contacts' initials.
+ * @param {string} prioSVG - HTML content for the priority indicator SVG.
+ * @returns {string} HTML content for the task card modal.
+ */
 function getTaskCardTemplate(task, subTaskWrapperHTML, circleTemplate, prioSVG) {
     return /*html*/ `
     <div onclick="openCardModal(this.getAttribute('data-task-id'))" data-task-id="${task.id}" draggable="true" ondragstart="startDragging(${task.id})" class="toDoCard">
